@@ -1,0 +1,2 @@
+include ':TestOpenAPIClient', ':openapilib'
+project(':openapilib').projectDir = new File(settingsDir, '../../SDK/OpenAPI/OpenAPILibrary/')
