@@ -1,4 +1,4 @@
-package com.kkbox.openapideveloperclient.adapters
+package com.kkbox.openapideveloper.adapters
 
 import android.app.Activity
 import android.content.Context
@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.kkbox.openapiclient.R
-import com.kkbox.openapideveloperclient.tracks.TrackInfo
+import com.kkbox.openapideveloper.tracks.TrackInfo
 import com.koushikdutta.ion.Ion
 import kotlin.collections.ArrayList
 

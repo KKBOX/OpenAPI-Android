@@ -1,4 +1,4 @@
-package com.kkbox.openapideveloperclient
+package com.kkbox.openapideveloper
 
 import android.content.Context
 import android.os.AsyncTask
@@ -8,17 +8,13 @@ import android.os.Bundle
 import android.widget.AbsListView
 import android.widget.ListView
 import android.widget.SearchView
-import com.google.gson.JsonNull
 import com.google.gson.JsonObject
 import com.kkbox.openapiclient.R
 
-import com.kkbox.openapideveloper.ClientInfo
 import com.kkbox.openapideveloper.api.Api
 import com.kkbox.openapideveloper.auth.Auth
-import com.kkbox.openapideveloperclient.adapters.TrackListAdapter
-import com.kkbox.openapideveloperclient.tracks.TrackInfo
-import com.koushikdutta.async.AsyncServer.post
-
+import com.kkbox.openapideveloper.adapters.TrackListAdapter
+import com.kkbox.openapideveloper.tracks.TrackInfo
 
 
 class MainActivity : AppCompatActivity() {
