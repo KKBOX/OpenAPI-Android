@@ -9,7 +9,7 @@ import android.widget.AbsListView
 import android.widget.ListView
 import android.widget.SearchView
 import com.google.gson.JsonObject
-import com.kkbox.openapiclient.R
+import com.kkbox.openapideveloper.R
 
 import com.kkbox.openapideveloper.api.Api
 import com.kkbox.openapideveloper.auth.Auth
