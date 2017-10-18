@@ -7,33 +7,33 @@
 1. Please use __Kotlin__ to develop.
 
 ## Develop the library
-1. Use the android studio to open the `SDK/OpenAPI` directory to open the project for the sdk.
+1. Use the android studio to open the `SDK/openapi_android_developer_sdk` directory to open the project for the sdk.
 
 ## Test the library
 First, browse [KKBOX Developer Website](https://kkbox.gelato.io/) and create an developer account, and then contact chrisyuan or lance to get client secret for that account.
 
-Then, create a file `ClientInfo.kt` in the `SDK/OpenAPI/OpenAPILibrary/src/main/java/com/kkbox/openapi` directory and put your client id and client secret in it.
+Then, create a file `ClientInfo.kt` in the `SDK/openapi_android_developer_sdk/OpenAPILibrary/src/main/java/com/kkbox/openapideveloper` directory and put your client id and client secret in it.
 
-    package com.kkbox.openapi
+    package com.kkbox.openapideveloper
     
     object ClientInfo {
         const val CLIENT_ID = "YOUR_CLIENT_ID"
         const val CLIENT_SECRET = "YOUR_CLIENT_SECRET"
     }
 
-Lastly, use Android Studio to open the `SDK/OpenAPI` directory, change to use the `AllTests` configuration and then debug.
+Lastly, use Android Studio to open the `SDK/openapi_android_developer_sdk` directory, change to use the `AllTests` configuration and then debug.
 
 ## Build the library
 
-    cd SDK/OpenAPI
+    cd SDK/openapi_android_developer_sdk
     ./gradlew assembleDebug
 
-The result aar will be in `${REPOISITORY_DIR}/SDK/OpenAPI/OpenAPILibrary/build/outputs/aar/OpenAPILibrary-debug.aar`.
+The result aar will be in `${REPOISITORY_DIR}/SDK/openapi_android_developer_sdk/OpenAPILibrary/build/outputs/aar/OpenAPILibrary-debug.aar`.
 
 ## Use the library as local aar
 1. Click `File > New > New Module`.
 1. Click `Import .JAR/.AAR Package` then click Next.
-1. Enter `${REPOISITORY_DIR}/SDK/OpenAPI/OpenAPILibrary/build/outputs/aar/OpenAPILibrary-debug.aar` then click Finish.
+1. Enter `${REPOISITORY_DIR}/SDK/openapi_android_developer_sdk/OpenAPILibrary/build/outputs/aar/OpenAPILibrary-debug.aar` then click Finish.
 1. Now the module should be copied into your project.
 1. Check the app's `settings.gradle`, there should be like this:
 
@@ -64,4 +64,4 @@ The result aar will be in `${REPOISITORY_DIR}/SDK/OpenAPI/OpenAPILibrary/build/o
 1. Finally sync the project
 1. Now the library should be ready
 ## Documentation
-Go to the `SDK/OpenAPI` directory and execute `./gradlew dokka` to generate the documentation, then open the file `SDK/OpenAPI/OpenAPILibrary/build/javadoc/-open-a-p-i-library/index.html`.
+Go to the `SDK/openapi_android_developer_sdk` directory and execute `./gradlew dokka` to generate the documentation, then open the file `SDK/openapi_android_developer_sdk/OpenAPILibrary/build/javadoc/-open-a-p-i-library/index.html`.
