@@ -1,9 +1,10 @@
-package com.kkbox.openapideveloper.api
+package com.kkbox.openapidevelopertest.api
 
 import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import com.kkbox.openapideveloper.ClientInfo
+import com.kkbox.openapideveloper.api.AlbumFetcher
+import com.kkbox.openapideveloper.api.HttpClient
 import com.kkbox.openapideveloper.auth.Auth
 import org.junit.Assert
 import org.junit.Test
@@ -11,26 +12,26 @@ import org.junit.runner.RunWith
 import java.util.concurrent.TimeUnit
 
 @RunWith(AndroidJUnit4::class)
-class SharedPlaylistFetcherTest {
+class AlbumFetcherTest {
     private val context: Context = InstrumentationRegistry.getTargetContext()
     private val auth: Auth = Auth(com.kkbox.openapideveloper.ClientInfo.CLIENT_ID, com.kkbox.openapideveloper.ClientInfo.CLIENT_SECRET, context)
     private val accessToken: String = auth.clientCredentialsFlow.fetchAccessToken().get().get("access_token").asString
     private val httpClient: HttpClient = HttpClient(accessToken, context)
-    private val sharedPlaylistFetcher: SharedPlaylistFetcher = SharedPlaylistFetcher(httpClient).setPlaylistId("4nUZM-TY2aVxZ2xaA-")
+    private val albumFetcher: AlbumFetcher = AlbumFetcher(httpClient).setAlbumId("KmRKnW5qmUrTnGRuxF")
 
     @Test
     fun fetchMetadata() {
-        Assert.assertTrue(sharedPlaylistFetcher.fetchMetadata().get(10, TimeUnit.SECONDS).has("id"))
+        Assert.assertTrue(albumFetcher.fetchMetadata().get(10, TimeUnit.SECONDS).has("id"))
     }
 
     @Test
     fun getWidgetUri() {
-        Assert.assertEquals(sharedPlaylistFetcher.getWidgetUri(),
-                "https://widget.kkbox.com/v1/?id=${sharedPlaylistFetcher.playlistId}&type=playlist")
+        Assert.assertEquals(albumFetcher.getWidgetUri(),
+                "https://widget.kkbox.com/v1/?id=${albumFetcher.albumId}&type=album")
     }
 
     @Test
     fun fetchTracks() {
-        Assert.assertTrue(sharedPlaylistFetcher.fetchTracks().get(10, TimeUnit.SECONDS).has("data"))
+        Assert.assertTrue(albumFetcher.fetchTracks().get(10, TimeUnit.SECONDS).has("data"))
     }
 }

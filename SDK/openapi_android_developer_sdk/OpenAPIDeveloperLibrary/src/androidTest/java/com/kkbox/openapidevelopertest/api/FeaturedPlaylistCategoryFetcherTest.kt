@@ -1,9 +1,10 @@
-package com.kkbox.openapideveloper.api
+package com.kkbox.openapidevelopertest.api
 
 import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import com.kkbox.openapideveloper.ClientInfo
+import com.kkbox.openapideveloper.api.FeaturedPlaylistCategoryFetcher
+import com.kkbox.openapideveloper.api.HttpClient
 import com.kkbox.openapideveloper.auth.Auth
 import org.junit.Assert
 import org.junit.Test

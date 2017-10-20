@@ -1,8 +1,9 @@
-package com.kkbox.openapideveloper.auth
+package com.kkbox.openapidevelopertest.auth
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import com.kkbox.openapideveloper.ClientInfo
+import com.kkbox.openapideveloper.auth.ClientCredentialsFlow
+import com.kkbox.openapideveloper.auth.TokenFetcher
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

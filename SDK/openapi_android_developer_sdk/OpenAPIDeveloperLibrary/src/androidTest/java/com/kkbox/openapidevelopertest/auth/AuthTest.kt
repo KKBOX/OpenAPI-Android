@@ -1,9 +1,10 @@
-package com.kkbox.openapideveloper.auth
+package com.kkbox.openapidevelopertest.auth
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import android.util.Log
 import com.kkbox.openapideveloper.ClientInfo
+import com.kkbox.openapideveloper.auth.Auth
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -17,7 +18,7 @@ import java.util.concurrent.TimeUnit
 @RunWith(AndroidJUnit4::class)
 class AuthTest {
     private val context = InstrumentationRegistry.getTargetContext()
-    private val auth = Auth(com.kkbox.openapideveloper.ClientInfo.CLIENT_ID, com.kkbox.openapideveloper.ClientInfo.CLIENT_SECRET, context)
+    private val auth = Auth(ClientInfo.CLIENT_ID, ClientInfo.CLIENT_SECRET, context)
 
     /*
     @Test
