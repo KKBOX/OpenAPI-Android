@@ -1,4 +1,4 @@
-package com.kkbox.openapiclient;
+package com.kkbox.openapideveloperlibraryclient;
 
 import org.junit.Test;
 

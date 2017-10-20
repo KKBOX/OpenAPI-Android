@@ -1,4 +1,4 @@
-package com.kkbox.openapideveloper;
+package com.kkbox.openapideveloperlibraryclient;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

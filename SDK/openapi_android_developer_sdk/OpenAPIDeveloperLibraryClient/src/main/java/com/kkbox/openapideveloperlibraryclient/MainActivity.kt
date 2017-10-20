@@ -1,4 +1,4 @@
-package com.kkbox.openapideveloper
+package com.kkbox.openapideveloperlibraryclient
 
 import android.content.Context
 import android.os.AsyncTask
@@ -13,8 +13,8 @@ import com.kkbox.openapideveloper.R
 
 import com.kkbox.openapideveloper.api.Api
 import com.kkbox.openapideveloper.auth.Auth
-import com.kkbox.openapideveloper.adapters.TrackListAdapter
-import com.kkbox.openapideveloper.tracks.TrackInfo
+import com.kkbox.openapideveloperlibraryclient.adapters.TrackListAdapter
+import com.kkbox.openapideveloperlibraryclient.tracks.TrackInfo
 
 
 class MainActivity : AppCompatActivity() {
