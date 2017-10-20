@@ -47,7 +47,7 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation project(':OpenAPILibrary')
+    implementation project(':OpenAPIDeveloperLibrary')
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.koushikdutta.ion:ion:2.2.1'
     implementation "com.google.code.gson:gson:2.8.0"

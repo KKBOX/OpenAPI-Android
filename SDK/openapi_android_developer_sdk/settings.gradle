@@ -1,1 +1,1 @@
-include ':OpenAPILibrary', ':openapideveloper'
+include ':OpenAPIDeveloperLibrary', ':OpenAPIDeveloperLibraryClient'
