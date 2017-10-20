@@ -118,9 +118,6 @@ class MainActivity : AppCompatActivity() {
         if (searchResult.isJsonNull) {
             return
         }
-        if (searchResult == null) {
-            return
-        }
         val tracksObj = searchResult.getAsJsonObject("tracks")
         val tracks = tracksObj?.getAsJsonArray("data")
 
