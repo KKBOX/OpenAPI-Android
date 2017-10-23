@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         context = this.applicationContext
-        auth = Auth(com.kkbox.openapideveloper.ClientInfo.CLIENT_ID, com.kkbox.openapideveloper.ClientInfo.CLIENT_SECRET, context)
+        auth = Auth(com.kkbox.openapideveloperlibraryclient.ClientInfo.CLIENT_ID, com.kkbox.openapideveloperlibraryclient.ClientInfo.CLIENT_SECRET, context)
         accessToken= auth.clientCredentialsFlow.fetchAccessToken().get().get("access_token").asString
         api = Api(accessToken, "TW", context)
 
