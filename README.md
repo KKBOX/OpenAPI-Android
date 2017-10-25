@@ -7,7 +7,7 @@
 1. Please use __Kotlin__ to develop.
 
 ## Develop the library
-1. Use the android studio to open the `SDK/openapi_android_developer_sdk` directory to open the project for the sdk.
+Use the android studio to open the `SDK/openapi_android_developer_sdk` directory to open the project for the sdk.
 
 ## Test the library
 First, browse [KKBOX Developer Website](https://kkbox.gelato.io/) and create an developer account, and then contact chrisyuan or lance to get client secret for that account.
@@ -65,6 +65,24 @@ The result aar will be in `${REPOISITORY_DIR}/SDK/openapi_android_developer_sdk/
 1. Now the library should be ready
 ## Documentation
 Go to the `SDK/openapi_android_developer_sdk` directory and execute `./gradlew dokka` to generate the documentation, then open the file `SDK/openapi_android_developer_sdk/OpenAPIDeveloperLibrary/build/javadoc/-open-a-p-i-library/index.html`.
+
+## How to use the SDK
+First import the sdk packages.
+```
+import com.kkbox.openapideveloper.api.Api
+import com.kkbox.openapideveloper.auth.Auth
+```
+Then obtaining the access token.
+```
+auth = Auth(com.kkbox.openapideveloperlibraryclient.ClientInfo.CLIENT_ID, com.kkbox.openapideveloperlibraryclient.ClientInfo.CLIENT_SECRET, context)
+accessToken= auth.clientCredentialsFlow.fetchAccessToken().get().get("access_token").asString
+```
+After obtaining the access token, you may call APIs like this:
+```
+api = Api(accessToken, "TW", context)
+val searchResult = api.searchFetcher.fetchSearchResult(offset=offset).get()
+```
+By the way, you can run the app in the `SDK/openapi_android_developer_sdk/OpenAPIDeveloperLibraryClient` directory, it may helps you to know the usage clearly.
 
 ## License
 Copyright 2017 KKBOX Technologies Limited
