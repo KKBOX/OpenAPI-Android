@@ -1,0 +1,6 @@
+$dokka.format:jekyll
+$dokka.linkExtension:html
+
+com.kkbox.openapideveloper
+com.kkbox.openapideveloper.api
+com.kkbox.openapideveloper.auth
