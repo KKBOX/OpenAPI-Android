@@ -1,6 +1,10 @@
 # KKBOX OpenAPI SDK for Android
 
 ## SDK usage
+### Compatibility
+1. The SDK itself is implemented in Kotlin, but it can be used as an ordinary java library.
+1. It should be able to use with Android Studio 2.x.
+
 ### Import the SDK
 In the module which uses the SDK, add following lines in build.gradle
 ```
@@ -10,7 +14,7 @@ buildscript {
     }
 }
 dependencies {
-    compile 'com.kkbox:openapideveloper:${sdk_version}'
+    compile 'com.kkbox:openapideveloper:1.0.0'
 }
 ```
 ### Prepare client ID & client secret
@@ -37,8 +41,10 @@ Please browse [https://kkbox.github.io/OpenAPI-Android/](https://kkbox.github.io
 
 ## SDK Development
 ### Development Environment
+1. Below applies to those who wants to __develop__ the SDK.
+1. If you were just using the SDK, please refer to previous parts.
 1. Android Studio 3.0
-   1. __DON'T USE OLDER VERSION OF ANDROID STUDIO!!!__, because it doesn't support kotlin.
+   1. __DON'T USE OLDER VERSION OF ANDROID STUDIO!!!__, because it doesn't support kotlin development.
    1. __DON'T USE IntelliJ__, because it's project file is not compatible with android studio 3.0.
 1. Please use __Kotlin__ to develop.
 
