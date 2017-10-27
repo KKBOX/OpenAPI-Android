@@ -1,5 +1,5 @@
 # KKBOX OpenAPI SDK for Android
-
+[ ![Download](https://api.bintray.com/packages/kkboxorg/maven/openapideveloper/images/download.svg) ](https://bintray.com/kkboxorg/maven/openapideveloper/_latestVersion)
 ## SDK usage
 ### Compatibility
 1. The SDK itself is implemented in Kotlin, but it can be used as an ordinary java library.
