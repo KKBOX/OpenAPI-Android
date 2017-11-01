@@ -34,7 +34,7 @@ class HttpClient(token: String, private val context: Context) {
         return Ion.with(context)
                 .load(resultUri.toString())
                 .setHeader("Authorization", token)
-                .setHeader("User-Agent", "KKBOX Openapi Android SDK")
+                .setHeader("User-Agent", "KKBOX Android SDK")
                 .setLogging("http-client", Log.DEBUG)
                 .asJsonObject()
     }
