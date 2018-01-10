@@ -51,7 +51,17 @@ class NewHitsPlaylistFetcher(private val httpClient: HttpClient, private val ter
      * @return the object of new hits playlist's metadata.
      * @sample NewHitsPlaylistFetcher.setPlaylistId('Wk-z5ZBpPowcmYlS0E').fetchMetadata()
      */
-    fun fetchMetadata(): ResponseFuture<JsonObject> {
+    fun fetchNewHitsPlaylist(): ResponseFuture<JsonObject> {
         return httpClient.get(endpoint + "/$playlistId", mapOf("territory" to territory))
+    }
+
+    /**
+     * Fetch new hits playlist tracks by given ID.
+     *
+     * @return the object of new hits playlist track's metadata.
+     * @sample NewHitsPlaylistFetcher.setPlaylistId('Wk-z5ZBpPowcmYlS0E').fetchMetadata()
+     */
+    fun fetchNewHitsPlaylistTracks(): ResponseFuture<JsonObject> {
+        return httpClient.get(endpoint + "/$playlistId/tracks", mapOf("territory" to territory))
     }
 }

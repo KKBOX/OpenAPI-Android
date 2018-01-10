@@ -25,7 +25,12 @@ class NewHitsPlaylistFetcherTest {
     }
 
     @Test
-    fun fetchMetadata() {
-        Assert.assertTrue(newHitsPlaylistFetcher.fetchMetadata().get(10, TimeUnit.SECONDS).has("id"))
+    fun fetchNewHitsPlaylist() {
+        Assert.assertTrue(newHitsPlaylistFetcher.fetchNewHitsPlaylist().get(10, TimeUnit.SECONDS).has("id"))
+    }
+
+    @Test
+    fun fetchNewHitsPlaylistTracks() {
+        Assert.assertTrue(newHitsPlaylistFetcher.fetchNewHitsPlaylistTracks().get(10, TimeUnit.SECONDS).has("id"))
     }
 }

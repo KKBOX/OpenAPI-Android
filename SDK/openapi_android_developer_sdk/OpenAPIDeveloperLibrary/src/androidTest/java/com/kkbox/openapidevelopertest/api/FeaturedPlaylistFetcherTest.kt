@@ -23,4 +23,14 @@ class FeaturedPlaylistFetcherTest {
     fun fetchAllFeaturedPlaylists() {
         Assert.assertTrue(featuredPlaylistFetcher.fetchAllFeaturedPlaylists().get(10, TimeUnit.SECONDS).has("data"))
     }
+
+    @Test
+    fun fetchFeaturedPlaylist() {
+        Assert.assertTrue(featuredPlaylistFetcher.fetchFeaturedPlaylist().get(10, TimeUnit.SECONDS).has("data"))
+    }
+
+    @Test
+    fun fetchFeaturedPlaylistTracks() {
+        Assert.assertTrue(featuredPlaylistFetcher.fetchFeaturedPlaylistTracks().get(10, TimeUnit.SECONDS).has("data"))
+    }
 }

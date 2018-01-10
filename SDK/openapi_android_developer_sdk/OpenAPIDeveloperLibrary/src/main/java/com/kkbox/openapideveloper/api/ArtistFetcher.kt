@@ -69,4 +69,20 @@ class ArtistFetcher(private val httpClient: HttpClient, private val territory: S
                         "limit" to limit?.toString(),
                         "offset" to offset?.toString()))
     }
+
+    /**
+     * Fetch related artists of an artist.
+     *
+     * @param limit the size for one page.
+     * @param offset the offset index for first element.
+     * @return related artists of an artist.
+     * @sample ArtistFetcher.setArtistId('Cnv_K6i5Ft4y41SxLy').fetchTopTracks()
+     * @see `https://docs.kkbox.codes/docs/artists-related-artists`
+     */
+    fun fetchRelatedArtists(limit: Int? = null, offset: Int? = null): ResponseFuture<JsonObject> {
+        return httpClient.get("$endpoint/$artistId/related-artists",
+                mapOf("territory" to territory,
+                        "limit" to limit?.toString(),
+                        "offset" to offset?.toString()))
+    }
 }

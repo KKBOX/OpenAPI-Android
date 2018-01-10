@@ -33,4 +33,9 @@ class ArtistFetcherTest {
     fun fetchTopTracks() {
         Assert.assertTrue(artistFetcher.fetchTopTracks().get(10, TimeUnit.SECONDS).has("data"))
     }
+
+    @Test
+    fun fetchRelatedArtists() {
+        Assert.assertTrue(artistFetcher.fetchRelatedArtists().get(10, TimeUnit.SECONDS).has("data"))
+    }
 }

@@ -24,4 +24,14 @@ class ChartFetcherTest {
     fun fetchCharts() {
         Assert.assertTrue(chartFetcher.fetchCharts().get(10, TimeUnit.SECONDS).has("data"))
     }
+
+    @Test
+    fun fetchChartsPlaylist() {
+        Assert.assertTrue(chartFetcher.fetchChartsPlaylist().get(10, TimeUnit.SECONDS).has("data"))
+    }
+
+    @Test
+    fun fetchChartsPlaylistTracks() {
+        Assert.assertTrue(chartFetcher.fetchChartsPlaylistTracks().get(10, TimeUnit.SECONDS).has("data"))
+    }
 }
