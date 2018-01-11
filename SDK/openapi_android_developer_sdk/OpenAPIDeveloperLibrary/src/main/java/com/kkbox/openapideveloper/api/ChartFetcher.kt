@@ -48,7 +48,7 @@ class ChartFetcher(private val httpClient: HttpClient, private val territory: St
      * Fetch information of the song ranking by given ID.
      *
      * @return the object of new hits playlist track's metadata.
-     * @sample ChartFetcher.setPlaylistId('Wk-z5ZBpPowcmYlS0E').fetchMetadata()
+     * @sample ChartFetcher.setPlaylistId("Wk-z5ZBpPowcmYlS0E").fetchMetadata()
      */
     fun fetchChartsPlaylist(): ResponseFuture<JsonObject> {
         return httpClient.get(endpoint + "/$playlistId", mapOf("territory" to territory))
@@ -58,7 +58,7 @@ class ChartFetcher(private val httpClient: HttpClient, private val territory: St
      * Fetch and list tracks of a chart by given ID.
      *
      * @return the object of new hits playlist track's metadata.
-     * @sample ChartFetcher.setPlaylistId('Wk-z5ZBpPowcmYlS0E').fetchMetadata()
+     * @sample ChartFetcher.setPlaylistId("Wk-z5ZBpPowcmYlS0E").fetchMetadata()
      */
     fun fetchChartsPlaylistTracks(): ResponseFuture<JsonObject> {
         return httpClient.get(endpoint + "/$playlistId/tracks", mapOf("territory" to territory))

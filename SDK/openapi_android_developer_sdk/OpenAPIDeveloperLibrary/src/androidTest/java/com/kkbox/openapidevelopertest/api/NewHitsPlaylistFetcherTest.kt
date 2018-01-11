@@ -24,13 +24,24 @@ class NewHitsPlaylistFetcherTest {
         Assert.assertTrue(newHitsPlaylistFetcher.fetchAllNewHitsPlaylists().get(10, TimeUnit.SECONDS).has("data"))
     }
 
+    fun getFirstPlaylistID() : String {
+        val data = newHitsPlaylistFetcher.fetchAllNewHitsPlaylists().get(10, TimeUnit.SECONDS)
+        val playlists = data.getAsJsonArray("data")
+        val playlist = playlists[0].asJsonObject
+        val playlistID = playlist.get("id").asString
+        Assert.assertTrue(playlistID.isNotEmpty())
+        return playlistID
+    }
+
     @Test
     fun fetchNewHitsPlaylist() {
-        Assert.assertTrue(newHitsPlaylistFetcher.fetchNewHitsPlaylist().get(10, TimeUnit.SECONDS).has("id"))
+        val playlistID = this.getFirstPlaylistID()
+        Assert.assertTrue(newHitsPlaylistFetcher.setPlaylistId(playlistID).fetchNewHitsPlaylist().get(10, TimeUnit.SECONDS).has("tracks"))
     }
 
     @Test
     fun fetchNewHitsPlaylistTracks() {
-        Assert.assertTrue(newHitsPlaylistFetcher.fetchNewHitsPlaylistTracks().get(10, TimeUnit.SECONDS).has("id"))
+        val playlistID = this.getFirstPlaylistID()
+        Assert.assertTrue(newHitsPlaylistFetcher.setPlaylistId(playlistID).fetchNewHitsPlaylistTracks().get(10, TimeUnit.SECONDS).has("data"))
     }
 }

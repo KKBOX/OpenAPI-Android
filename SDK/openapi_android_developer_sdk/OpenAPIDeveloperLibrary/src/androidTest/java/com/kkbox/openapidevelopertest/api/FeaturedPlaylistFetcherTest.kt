@@ -24,13 +24,24 @@ class FeaturedPlaylistFetcherTest {
         Assert.assertTrue(featuredPlaylistFetcher.fetchAllFeaturedPlaylists().get(10, TimeUnit.SECONDS).has("data"))
     }
 
+    fun getFirstPlaylistID() : String {
+        val data = featuredPlaylistFetcher.fetchAllFeaturedPlaylists().get(10, TimeUnit.SECONDS)
+        val playlists = data.getAsJsonArray("data")
+        val playlist = playlists[0].asJsonObject
+        val playlistID = playlist.get("id").asString
+        Assert.assertTrue(playlistID.isNotEmpty())
+        return playlistID
+    }
+
     @Test
     fun fetchFeaturedPlaylist() {
-        Assert.assertTrue(featuredPlaylistFetcher.fetchFeaturedPlaylist().get(10, TimeUnit.SECONDS).has("data"))
+        val playlistID = this.getFirstPlaylistID()
+        Assert.assertTrue(featuredPlaylistFetcher.setPlaylistId(playlistID).fetchFeaturedPlaylist().get(10, TimeUnit.SECONDS).has("tracks"))
     }
 
     @Test
     fun fetchFeaturedPlaylistTracks() {
-        Assert.assertTrue(featuredPlaylistFetcher.fetchFeaturedPlaylistTracks().get(10, TimeUnit.SECONDS).has("data"))
+        val playlistID = this.getFirstPlaylistID()
+        Assert.assertTrue(featuredPlaylistFetcher.setPlaylistId(playlistID).fetchFeaturedPlaylistTracks().get(10, TimeUnit.SECONDS).has("data"))
     }
 }

@@ -25,13 +25,24 @@ class ChartFetcherTest {
         Assert.assertTrue(chartFetcher.fetchCharts().get(10, TimeUnit.SECONDS).has("data"))
     }
 
+    fun getFirstPlaylistID() : String {
+        val data = chartFetcher.fetchCharts().get(10, TimeUnit.SECONDS)
+        val playlists = data.getAsJsonArray("data")
+        val playlist = playlists[0].asJsonObject
+        val playlistID = playlist.get("id").asString
+        Assert.assertTrue(playlistID.isNotEmpty())
+        return playlistID
+    }
+
     @Test
     fun fetchChartsPlaylist() {
-        Assert.assertTrue(chartFetcher.fetchChartsPlaylist().get(10, TimeUnit.SECONDS).has("data"))
+        val playlistID = this.getFirstPlaylistID()
+        Assert.assertTrue(chartFetcher.setPlaylistId(playlistID).fetchChartsPlaylist().get(10, TimeUnit.SECONDS).has("tracks"))
     }
 
     @Test
     fun fetchChartsPlaylistTracks() {
-        Assert.assertTrue(chartFetcher.fetchChartsPlaylistTracks().get(10, TimeUnit.SECONDS).has("data"))
+        val playlistID = this.getFirstPlaylistID()
+        Assert.assertTrue(chartFetcher.setPlaylistId(playlistID).fetchChartsPlaylistTracks().get(10, TimeUnit.SECONDS).has("data"))
     }
 }

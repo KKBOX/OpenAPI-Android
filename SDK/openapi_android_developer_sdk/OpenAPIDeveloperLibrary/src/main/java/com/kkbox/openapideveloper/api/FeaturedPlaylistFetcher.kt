@@ -48,7 +48,7 @@ class FeaturedPlaylistFetcher(private val httpClient: HttpClient, private val te
      * Fetch featured playlist by given ID.
      *
      * @return the object of featured playlist's metadata.
-     * @sample FeaturedPlaylistFetcher.setPlaylistId('Wk-z5ZBpPowcmYlS0E').fetchMetadata()
+     * @sample FeaturedPlaylistFetcher.setPlaylistId("Wk-z5ZBpPowcmYlS0E").fetchMetadata()
      */
     fun fetchFeaturedPlaylist(): ResponseFuture<JsonObject> {
         return httpClient.get(endpoint + "/$playlistId", mapOf("territory" to territory))
@@ -58,7 +58,7 @@ class FeaturedPlaylistFetcher(private val httpClient: HttpClient, private val te
      * Fetch featured playlist tracks by given ID.
      *
      * @return the object of featured playlist track's metadata.
-     * @sample FeaturedPlaylistFetcher.setPlaylistId('Wk-z5ZBpPowcmYlS0E').fetchMetadata()
+     * @sample FeaturedPlaylistFetcher.setPlaylistId("Wk-z5ZBpPowcmYlS0E").fetchMetadata()
      */
     fun fetchFeaturedPlaylistTracks(): ResponseFuture<JsonObject> {
         return httpClient.get(endpoint + "/$playlistId/tracks", mapOf("territory" to territory))
