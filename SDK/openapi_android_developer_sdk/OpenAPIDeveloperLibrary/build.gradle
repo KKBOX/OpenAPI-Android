@@ -68,7 +68,7 @@ publish {
     userOrg = 'kkboxorg'
     groupId = 'com.kkbox'
     artifactId = 'openapideveloper'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.2'
     desc = 'open api developer sdk'
     website = 'https://github.com/KKBOX/OpenAPI-Android.git'
 }
