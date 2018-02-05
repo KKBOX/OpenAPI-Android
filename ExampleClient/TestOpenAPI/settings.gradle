@@ -1,2 +1,2 @@
-include ':TestOpenAPIClient', ':openapilib'
-project(':openapilib').projectDir = new File(settingsDir, '../../SDK/OpenAPI/OpenAPILibrary/')
+include ':TestOpenAPIClient', ':openapilibrary'
+project(':openapilibrary').projectDir = new File(settingsDir, '../../SDK/openapi_android_developer_sdk/OpenAPIDeveloperLibrary/')

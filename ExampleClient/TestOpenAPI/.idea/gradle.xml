@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/TestOpenAPIClient" />
-            <option value="$PROJECT_DIR$/../../SDK/OpenAPI/OpenAPILibrary" />
+            <option value="$PROJECT_DIR$/../../SDK/openapi_android_developer_sdk/OpenAPIDeveloperLibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

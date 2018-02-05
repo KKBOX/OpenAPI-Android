@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TestOpenAPI.iml" filepath="$PROJECT_DIR$/TestOpenAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestOpenAPIClient/TestOpenAPIClient.iml" filepath="$PROJECT_DIR$/TestOpenAPIClient/TestOpenAPIClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../SDK/OpenAPI/OpenAPILibrary/openapilib.iml" filepath="$PROJECT_DIR$/../../SDK/OpenAPI/OpenAPILibrary/openapilib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../SDK/openapi_android_developer_sdk/OpenAPIDeveloperLibrary/openapilibrary.iml" filepath="$PROJECT_DIR$/../../SDK/openapi_android_developer_sdk/OpenAPIDeveloperLibrary/openapilibrary.iml" />
     </modules>
   </component>
 </project>
